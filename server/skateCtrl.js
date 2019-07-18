@@ -18,7 +18,7 @@ module.exports = {
     },
     
     addBoard(req,res){
-        const {construction,trucks,wheels,bearings,img} = req.body
+        const {name,construction,trucks,wheels,bearings,img} = req.body
         if(trucks){
             req.body.id = id
             id++
@@ -28,7 +28,8 @@ module.exports = {
                 trucks: trucks,
                 wheels:wheels,
                 bearings: bearings,
-                img:img
+                img:img,
+                name: name
             })
         }
         res.status(200).send(data)
@@ -49,9 +50,9 @@ module.exports = {
     },
 
     getById(req,res){
-        
-        
-        res.status(200).send(board)
+        const {name} = req.query
+        const index = data.findIndex(boards => boards.name === name)
+        res.status(200).send(index)
     }
     
 
