@@ -1,6 +1,5 @@
 const data = require('./data')
-
-let id = 4
+let id = 5
 module.exports = {
 
     getAll(req,res){
@@ -19,15 +18,38 @@ module.exports = {
     },
     
     addBoard(req,res){
-        let {id,Construction,TrucksWheels,Bearings,img} = req.body
-        data.push({
-            id: id,
-            
-        })
+        const {construction,trucks,wheels,bearings,img} = req.body
+        if(trucks){
+            req.body.id = id
+            id++
+            data.push({
+                id: req.body.id,
+                construction: construction,
+                trucks: trucks,
+                wheels:wheels,
+                bearings: bearings,
+                img:img
+            })
+        }
         res.status(200).send(data)
     },
+
+    update(req,res){
+        const {id} = req.params
+        console.log(id)
+        const {construction,trucks,wheels,bearings,img} = req.body
+        const index = data.findIndex(boards => boards.id === +id)
+        data[index].construction = construction
+        data[index].trucks = trucks
+        data[index].wheels = wheels
+        data[index].bearings = bearings
+        data[index].img = img
+
+        res.status(200).send(data)
+    },
+
     getById(req,res){
-        const board = data.filter(build => build.id === id === +req.query.id)
+        
         
         res.status(200).send(board)
     }
