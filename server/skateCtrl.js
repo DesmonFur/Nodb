@@ -37,7 +37,6 @@ module.exports = {
 
     update(req,res){
         const {id} = req.params
-        console.log(id)
         const {construction,trucks,wheels,bearings,img} = req.body
         const index = data.findIndex(boards => boards.id === +id)
         data[index].construction = construction
@@ -45,7 +44,6 @@ module.exports = {
         data[index].wheels = wheels
         data[index].bearings = bearings
         data[index].img = img
-
         res.status(200).send(data)
     },
 
