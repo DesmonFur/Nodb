@@ -3,6 +3,7 @@ let id = 5
 module.exports = {
 
     getAll(req,res){
+        console.log(req.query)
         res.status(200).send(data)
     },
 
