@@ -6,7 +6,8 @@ export default class Skateboards extends Component {
         this.state = {
             id: this.props.id,
             skateboards: this.props.name,
-            input: ''
+            input: '',
+            filter: ''
         }
         this.save = this.save.bind(this)
     }
@@ -17,7 +18,11 @@ handleChange(e){
 
 save(){
     this.props.editer( this.state.id, {name: this.state.input})
-    this.setState({skateboards:  this.state.input})
+    // this.setState({skateboards:  this.state.input})
+}
+
+change(event){
+    this.props.
 }
 
 
@@ -36,7 +41,7 @@ save(){
             value={this.state.input}
             />
             <button onClick={this.save}> Update</button></form>
-        <h3>{skateboards}</h3>
+        <h3>{this.props.name}</h3>
                     
                 <img src={img} alt="skateboards"/>
                   <p> 

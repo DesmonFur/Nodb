@@ -12,6 +12,7 @@ export default class Collection extends Component {
         this.edit = this.edit.bind(this)
         this.addBoard= this.addBoard.bind(this)
         this.delBoard= this.delBoard.bind(this)
+        this.search= this.search.bind(this)
 
     }
 
@@ -40,6 +41,12 @@ edit(id,body){
         this.setState({
             skateArr: res.data
         })
+    })
+}
+
+search(name){
+    axios.get(`/api/skateboardsName?name=${name}`).then(res => {
+        this.this.setState({skateArr: res.data})
     })
 }
 
@@ -73,6 +80,7 @@ edit(id,body){
             editer={this.edit}
             add={this.add}
             delBoard={this.delBoard}
+            search={this.search}
             />
             ))
             

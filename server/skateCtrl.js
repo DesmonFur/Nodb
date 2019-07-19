@@ -1,5 +1,5 @@
 const data = require("./data");
-let id = 7;
+let id = data.length + 1;
 module.exports = {
   getAll(req, res) {
     console.log(req.query);
@@ -8,9 +8,9 @@ module.exports = {
 
   delete(req, res) {
     const { id } = req.params;
-    console.log(id);
+    // console.log(id);
     const index = data.findIndex(skate => skate.id === +id);
-    console.log(index);
+    // console.log('delete', index);
     data.splice(index, 1);
     res.status(200).send(data);
   },
@@ -34,7 +34,7 @@ module.exports = {
   },
 
   update(req, res) {
-    console.log(req.body)
+    // console.log(req.body)
     const { id } = req.params;
     const { construction, trucks, wheels, bearings, img, name } = req.body;
     const index = data.findIndex(boards => boards.id === +id);
@@ -44,13 +44,13 @@ module.exports = {
     // data[index].bearings = bearings;
     // data[index].img = img;\
     data[index].name = name;
-    console.log(data[index])
+    // console.log('update', data[index])
     res.status(200).send(data);
   },
 
-  getById(req, res) {
+  getByName(req, res) {
     const { name } = req.query;
     const index = data.findIndex(boards => boards.name === name);
-    res.status(200).send(index);
+    res.status(200).send(data[index]);
   }
 };

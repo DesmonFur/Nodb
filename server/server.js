@@ -4,7 +4,7 @@ const skateCtrl = require('./skateCtrl')
 app.use(express.json())
 
 app.get('/api/skateboards', skateCtrl.getAll)
-app.get('/api/skateboardsName', skateCtrl.getById)
+app.get('/api/skateboardsName', skateCtrl.getByName)
 app.post('/api/skateboards',  skateCtrl.addBoard)
 app.put('/api/skateboards/:id', skateCtrl.update)
 app.delete('/api/skateboards/:id', skateCtrl.delete)
