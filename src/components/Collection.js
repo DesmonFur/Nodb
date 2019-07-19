@@ -23,11 +23,10 @@ componentDidMount(){
 
         console.log(this.state.skateArr)
         return (
-            <div>
+            <div className="collections">
+            <h2> SKATEBOARD COLLECTION</h2>
 
-                <h1>Collection balls</h1>
-
-                <section>{
+{
                     skateArr.map( skates =>(
                         <Skateboards 
                 
@@ -43,7 +42,7 @@ componentDidMount(){
                     />
                     ))
                 }
-                </section>
+                
             </div>
         )
     }

@@ -1,33 +1,21 @@
-import React, {Component} from 'react';
-import './App.css';
-import Header from './components/Header'
-import Collection from './components/Collection'
-import Skateboards from './components/Skateboards'
+import React, { Component } from "react";
+import "./App.css";
+import Header from "./components/Header";
+import Collection from "./components/Collection";
+import Skateboards from "./components/Skateboards";
 class App extends Component {
-constructor(){
-  super()
-}
+  constructor() {
+    super();
+  }
 
-
-
-
-
-
-  render(){
-  return (
-    <div className="App">
-    <div className="header">
-      <header>
+  render() {
+    return (
+      <div className="App">
         <Header />
-      </header>
-    <section>
-      <Collection />
-      <Skateboards />
-    </section>
-
-    </div>
-    </div>
-  )}
+        <Collection />
+      </div>
+    );
+  }
 }
 
 export default App;

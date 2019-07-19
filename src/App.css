@@ -1,0 +1,31 @@
+.App {
+    text-align: center;
+}
+
+.header{
+    border: 1px solid red;
+    height: 10vh;
+    width: 90vw;
+}
+  
+  .collections{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    border:1px solid blueviolet;
+    position: relative;
+    top: 10vh;
+  }
+
+  /* .contained {
+      display: flex;
+      border: 1px solid yellow;
+      justify-content: center;
+  } */
+img {
+    position: relative;
+    top: 2vh;
+    width:30%;
+    height: auto;
+
+}
