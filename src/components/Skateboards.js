@@ -21,11 +21,6 @@ save(){
     // this.setState({skateboards:  this.state.input})
 }
 
-change(event){
-    this.props.
-}
-
-
 
 
     render() {
@@ -42,8 +37,10 @@ change(event){
             />
             <button onClick={this.save}> Update</button></form>
         <h3>{this.props.name}</h3>
-                    
+                  <div className='skates'>
+                      
                 <img src={img} alt="skateboards"/>
+                      </div>  
                   <p> 
                   {construction}  <br/>
                     {trucks} <br/>

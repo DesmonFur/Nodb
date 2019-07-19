@@ -7,7 +7,8 @@ export default class Collection extends Component {
     constructor(){
         super()
         this.state = {
-            skateArr: []
+            skateArr: [],
+            name: ''
         }
         this.edit = this.edit.bind(this)
         this.addBoard= this.addBoard.bind(this)
@@ -33,7 +34,7 @@ delBoard(id){
     console.log('hitaddBoard', id)
     axios.delete(`/api/skateboards/${id}`).then(res => {
         this.setState({skateArr: res.data})
-    })
+    }).catch(()=> alert('NANI!'))
 }
 
 edit(id,body){
@@ -44,15 +45,22 @@ edit(id,body){
     })
 }
 
+
+find(value){
+   let filtered = this.state.skateArr.filter(word => word == this.state.skateArr.name)
+    this.setState({name: filtered})
+}
 search(name){
-    axios.get(`/api/skateboardsName?name=${name}`).then(res => {
-        this.this.setState({skateArr: res.data})
+    console.log(this.state.name)
+    axios.get(`/api/skateboardsName?name=${this.state.name}`).then(res => {
+        // console.log(res.data)
+        this.setState({skateArr: res.data})
     })
 }
 
     render() {
         const {skateArr} = this.state
-
+        console.log(skateArr)
         return (
 
             <div>
@@ -61,10 +69,11 @@ search(name){
                 />
                 <div>
                    
+                <input type='text' onChange={e => this.setState({name:e.target.value})} />
+                <button onClick={this.search}> FIND NAME </button>
                 </div>
             
             <div className="collections">
-            
             
             {
             skateArr.map( skates =>(

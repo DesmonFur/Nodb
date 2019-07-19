@@ -50,7 +50,8 @@ module.exports = {
 
   getByName(req, res) {
     const { name } = req.query;
-    const index = data.findIndex(boards => boards.name === name);
-    res.status(200).send(data[index]);
+    const index = data.findIndex(boards => boards.name.toLowerCase() === name.toLowerCase());
+    console.log(index)
+    res.status(200).send(data[index] ? [data[index]] : []);
   }
 };
