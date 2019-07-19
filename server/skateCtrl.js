@@ -34,14 +34,17 @@ module.exports = {
   },
 
   update(req, res) {
+    console.log(req.body)
     const { id } = req.params;
-    const { construction, trucks, wheels, bearings, img } = req.body;
+    const { construction, trucks, wheels, bearings, img, name } = req.body;
     const index = data.findIndex(boards => boards.id === +id);
-    data[index].construction = construction;
-    data[index].trucks = trucks;
-    data[index].wheels = wheels;
-    data[index].bearings = bearings;
-    data[index].img = img;
+    // data[index].construction = construction;
+    // data[index].trucks = trucks;
+    // data[index].wheels = wheels;
+    // data[index].bearings = bearings;
+    // data[index].img = img;\
+    data[index].name = name;
+    console.log(data[index])
     res.status(200).send(data);
   },
 

@@ -1,41 +1,41 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 
 export default class Skateboards extends Component {
     constructor(props){
         super(props)
         this.state = {
             id: this.props.id,
-            skateboards: this.props.name
+            skateboards: this.props.name,
+            input: ''
         }
         this.save = this.save.bind(this)
     }
 
 handleChange(e){
-    this.setState({skateboards: e})
+    this.setState({input: e})
 }
 
 save(){
-    this.props.editer( this.state.id, {name: this.state.skateboards})
+    this.props.editer( this.state.id, {name: this.state.input})
+    this.setState({skateboards:  this.state.input})
 }
 
 
 
 
     render() {
-        console.log(this.state.id)
+        
         const {construction, trucks, wheels, bearings,img} = this.props
         const {skateboards} = this.state
-        console.log(this.state)
         return (
             
             <div>
-              
-            <input type="text"
-              onChange={e => this.handleChange(e.target.value)}
-              placeholder="name"
-              />    
-            <button onClick={this.save}> Update</button>
+            <form action="submit"><input type="text"
+            onChange={e => this.handleChange(e.target.value)}
+            placeholder="name"
+            value={this.state.input}
+            />
+            <button onClick={this.save}> Update</button></form>
         <h3>{skateboards}</h3>
                     
                 <img src={img} alt="skateboards"/>
@@ -46,6 +46,7 @@ save(){
                     </p>
             
             </div>
+           
                     
         )
     }

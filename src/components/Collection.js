@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Skateboards from "./Skateboards";
+import Form from './Form'
 
 export default class Collection extends Component {
     constructor(){
@@ -9,6 +10,7 @@ export default class Collection extends Component {
             skateArr: []
         }
         this.edit = this.edit.bind(this)
+        this.addBoard= this.addBoard.bind(this)
 
     }
 
@@ -38,11 +40,12 @@ edit(id,body){
         return (
 
             <div>
-                
-            <div className = ' query '>
-             
-            <input type="text"/>
-            </div>
+                <Form add={this.addBoard} 
+                bodyP = {this.state.skateArr}
+                />
+                <div>
+                   
+                </div>
             
             <div className="collections">
             
