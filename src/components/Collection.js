@@ -8,6 +8,8 @@ export default class Collection extends Component {
         this.state = {
             skateArr: []
         }
+        this.edit = this.edit.bind(this)
+
     }
 
 componentDidMount(){
@@ -16,34 +18,56 @@ componentDidMount(){
     })
 }
 
+addBoard(body) {
+    axios.post('/api/skateboards', body).then(res => {
+        this.setState({skateArr: res.data})
+    })
+}
+
+edit(id,body){
+    axios.put(`/api/skateboards/${id}`, body).then(res => {
+        this.setState({
+            skateArr: res.data
+        })
+    })
+}
 
     render() {
         const {skateArr} = this.state
 
-
-        console.log(this.state.skateArr)
         return (
-            <div className="collections">
-            <h2> SKATEBOARD COLLECTION</h2>
 
-{
-                    skateArr.map( skates =>(
-                        <Skateboards 
+            <div>
                 
-                    key={skates.id}
-                    construction={skates.construction}
-                    trucks={skates.trucks}
-                    wheels={skates.wheels}
-                    bearings={skates.bearings}
-                    img={skates.img}
-                    name={skates.name}
-                    
-                    
-                    />
-                    ))
-                }
-                
+            <div className = ' query '>
+             
+            <input type="text"/>
             </div>
+            
+            <div className="collections">
+            
+            
+            {
+            skateArr.map( skates =>(
+            <Skateboards
+            
+            id={skates.id}
+            construction={skates.construction}
+            trucks={skates.trucks}
+            wheels={skates.wheels}
+            bearings={skates.bearings}
+            img={skates.img}
+            name={skates.name}
+            editer={this.edit}
+            add={this.add}
+            />
+            ))
+            
+            
+            
+            }
+            
+            </div></div>
         )
     }
 }

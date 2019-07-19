@@ -12,6 +12,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
+        <h2> SKATEBOARD COLLECTION </h2>
         <Collection />
       </div>
     );
