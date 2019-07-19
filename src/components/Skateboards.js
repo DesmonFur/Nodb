@@ -39,10 +39,12 @@ save(){
         <h3>{skateboards}</h3>
                     
                 <img src={img} alt="skateboards"/>
-                  <p> {construction}  <br/>
+                  <p> 
+                  {construction}  <br/>
                     {trucks} <br/>
                     {wheels} <br/>
-                    {bearings}
+                    {bearings} <br/>
+                    <button onClick={() => this.props.delBoard(this.props.id)}> Delete </button>
                     </p>
             
             </div>

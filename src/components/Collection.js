@@ -11,6 +11,7 @@ export default class Collection extends Component {
         }
         this.edit = this.edit.bind(this)
         this.addBoard= this.addBoard.bind(this)
+        this.delBoard= this.delBoard.bind(this)
 
     }
 
@@ -21,7 +22,15 @@ componentDidMount(){
 }
 
 addBoard(body) {
+    
     axios.post('/api/skateboards', body).then(res => {
+        this.setState({skateArr: res.data})
+    })
+}
+
+delBoard(id){
+    console.log('hitaddBoard', id)
+    axios.delete(`/api/skateboards/${id}`).then(res => {
         this.setState({skateArr: res.data})
     })
 }
@@ -40,8 +49,8 @@ edit(id,body){
         return (
 
             <div>
-                <Form add={this.addBoard} 
-                bodyP = {this.state.skateArr}
+                <Form addBoard={this.addBoard} 
+                skateArr = {this.state.skateArr}
                 />
                 <div>
                    
@@ -63,6 +72,7 @@ edit(id,body){
             name={skates.name}
             editer={this.edit}
             add={this.add}
+            delBoard={this.delBoard}
             />
             ))
             
