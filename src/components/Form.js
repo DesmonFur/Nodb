@@ -9,7 +9,8 @@ export class Form extends Component {
       wheels: "",
       bearings: "",
       img: "",
-      name: ""
+      name: "",
+      brand: ""
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -23,46 +24,55 @@ export class Form extends Component {
   render() {
     console.log(this.state);
     return (
-      <div>
-        {/* <form action="submit"> */}
-        <input
-          type="text"
-          placeholder="name"
-          name="name"
-          onChange={this.handleChange}
-        />
-        <input
-          type="text"
-          placeholder="construction"
-          name="construction"
-          onChange={this.handleChange}
-        />
-        <input
-          type="text"
-          placeholder="trucks"
-          name="trucks"
-          onChange={this.handleChange}
-        />
-        <input
-          type="text"
-          placeholder="wheels"
-          name="wheels"
-          onChange={this.handleChange}
-        />
-        <input
-          type="text"
-          placeholder="bearings"
-          name="bearings"
-          onChange={this.handleChange}
-        />
-        <input
-          type="text"
-          placeholder="img"
-          name="img"
-          onChange={this.handleChange}
-        />
-        <button onClick={() => this.props.addBoard(this.state)}>Add </button>
-        {/* </form> */}
+      <div className="contain-form">
+      <div className= 'form'>
+      {/* <form action="submit"> */}
+      <input
+      type="text"
+      placeholder="name"
+      name="name"
+      onChange={this.handleChange}
+      />
+      <input
+      type="text"
+      placeholder="construction"
+      name="construction"
+      onChange={this.handleChange}
+      />
+      <input
+      type="text"
+      placeholder="trucks"
+      name="trucks"
+      onChange={this.handleChange}
+      />
+      <input
+      type="text"
+      placeholder="wheels"
+      name="wheels"
+      onChange={this.handleChange}
+      />
+      <input
+      type="text"
+      placeholder="bearings"
+      name="bearings"
+      onChange={this.handleChange}
+      />
+      <input
+      type="text"
+      placeholder="img"
+      name="img"
+      onChange={this.handleChange}
+      />
+      <input
+      type="text"
+      placeholder="brand"
+      name="brand"
+      onChange={this.handleChange}
+      />
+      <input type="submit" value="Submit" onClick={() => this.props.addBoard(this.state)}></input>
+      {/* <button onClick={() => this.props.addBoard(this.state)}>Add </button> */}
+      {/* </form> */}
+      </div>
       </div>
     );
   }

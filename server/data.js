@@ -72,22 +72,69 @@ const data = [
   {
     id: 7,
     construction: "Traditional 7-Ply",
-    trucks: "Tensor Trucks",
-    wheels: " Enjoi 51mm Wheels",
+    trucks: "Anchor Trucks",
+    wheels: " Krooked 53mm Wheels",
     bearings: " ABEC 5 Bearing",
     img:
-      "https://www.tactics.com/a/bjjw/9/enjoi-my-first-pony-725-soft-wheel-complete-skateboard.webp",
-    name: "LJDI"
+      "https://www.tactics.com/a/bgf1/9/krooked-shmoo-tie-dye-738-mini-complete-skateboard.webp",
+    name: "LJDI",
+    brand: 'Krooked'
   },
   {
     id: 8,
     construction: "Traditional 7-Ply",
-    trucks: "Tensor Trucks",
-    wheels: " Enjoi 51mm Wheels",
+    trucks: "Anchor Trucks",
+    wheels: " Krooked 52mm Wheels",
     bearings: " ABEC 5 Bearing",
     img:
-      "https://www.tactics.com/a/bjjw/9/enjoi-my-first-pony-725-soft-wheel-complete-skateboard.webp",
-    name: "LJDI"
+      "https://www.tactics.com/a/am5n/9/krooked-bird-camo-md-775-complete-skateboard.webp",
+    name: "LJDI",
+    brand: 'Krooked'
+  },
+  {
+    id: 9,
+    construction: "Traditional 7-Ply",
+    trucks: "Anchor Trucks",
+    wheels: "OJ 53mm 95a Wheels",
+    bearings: " ABEC 5 Bearing",
+    img:
+      "https://www.tactics.com/a/b6td/9/dgk-currency-775-complete-skateboard.webp",
+    name: "LJDI",
+    brand: 'Krooked'
+  },
+
+  {
+    id: 10,
+    construction: "7-Ply Hard Rock Maple",
+    trucks: "Bullet 140 Trucks",
+    wheels: " DGK 52mm 100a Wheels",
+    bearings: " ABEC 5 Bearing",
+    img:
+      "https://www.tactics.com/a/b362/9/dgk-my-ninja-80-complete-skateboard.webp",
+    name: "LJDI",
+    brand: 'DGK'
+  },
+  {
+    id: 11,
+    construction: "7-Ply Hard Rock Maple",
+    trucks: "Bullet 120 Trucks",
+    wheels: " DGK 52mm 100a Wheels",
+    bearings: "Bullet ABEC 3 Bearings",
+    img:
+      "https://www.tactics.com/a/b35y/9/dgk-faith-75-complete-skateboard.webp",
+    name: "LJDI",
+    brand: 'DGK'
+  },
+  {
+    id: 12,
+    construction: "7-Ply Hard Rock Maple",
+    trucks: "DGK 5.0 Raw Trucks",
+    wheels: "DGK 52mm 100a Wheels",
+    bearings: "Bullet ABEC 3 Bearings",
+    img:
+      "https://www.tactics.com/a/bkgx/9/dgk-junk-food-80-complete-skateboard.webp",
+    name: "LJDI",
+    brand: 'DGK'
   }
 ];
 

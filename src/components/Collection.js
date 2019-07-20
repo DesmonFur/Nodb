@@ -25,7 +25,7 @@ export default class Collection extends Component {
   addBoard(body) {
     axios.post("/api/skateboards", body).then(res => {
       this.setState({ skateArr: res.data });
-    });
+    }).catch(() => 'No can add');
   }
 
   delBoard(id) {
@@ -43,7 +43,8 @@ export default class Collection extends Component {
       this.setState({
         skateArr: res.data
       });
-    });
+    }).catch(() => alert('NO EDIT'))
+    ;
   }
 
   find(value) {
@@ -57,7 +58,8 @@ export default class Collection extends Component {
     axios.get(`/api/skateboardsName?name=${this.state.name}`).then(res => {
       // console.log(res.data)
       this.setState({ skateArr: res.data });
-    });
+    })
+    ;
   }
 
   render() {
@@ -65,13 +67,13 @@ export default class Collection extends Component {
     console.log(skateArr);
     return (
       <div>
-        <Form addBoard={this.addBoard} skateArr={this.state.skateArr} />
-        <div>
+
+        <div className='query'>
           <input
             type="text"
             onChange={e => this.setState({ name: e.target.value })}
           />
-          <button onClick={this.search}> FIND NAME </button>
+          <input type='submit' onClick={this.search}  />
         </div>
 
         <div className="collections">
@@ -84,6 +86,7 @@ export default class Collection extends Component {
               bearings={skates.bearings}
               img={skates.img}
               name={skates.name}
+              brand={skates.brand}
               editer={this.edit}
               add={this.add}
               delBoard={this.delBoard}
@@ -91,6 +94,7 @@ export default class Collection extends Component {
             />
           ))}
         </div>
+              <Form addBoard={this.addBoard} skateArr={this.state.skateArr} />
       </div>
     );
   }

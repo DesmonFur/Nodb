@@ -16,7 +16,7 @@ module.exports = {
   },
 
   addBoard(req, res) {
-    const { name, construction, trucks, wheels, bearings, img } = req.body;
+    const { name, construction, trucks, wheels, bearings, img ,brand } = req.body;
     if (trucks) {
       req.body.id = id;
       id++;
@@ -27,7 +27,8 @@ module.exports = {
         wheels: wheels,
         bearings: bearings,
         img: img,
-        name: name
+        name: name,
+        brand: brand
       });
     }
     res.status(200).send(data);
@@ -36,7 +37,7 @@ module.exports = {
   update(req, res) {
     // console.log(req.body)
     const { id } = req.params;
-    const { construction, trucks, wheels, bearings, img, name } = req.body;
+    const { construction, trucks, wheels, bearings, img, name,brand } = req.body;
     const index = data.findIndex(boards => boards.id === +id);
     // data[index].construction = construction;
     // data[index].trucks = trucks;
@@ -50,7 +51,11 @@ module.exports = {
 
   getByName(req, res) {
     const { name } = req.query;
-    const index = data.findIndex(boards => boards.name.toLowerCase() === name.toLowerCase());
+
+    
+    const index = data.findIndex(boards => boards.name.toLowerCase() == name.toLowerCase());
+
+
     console.log(index)
     res.status(200).send(data[index] ? [data[index]] : []);
   }

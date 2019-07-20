@@ -22,8 +22,8 @@ export default class Skateboards extends Component {
   }
 
   render() {
-    const { construction, trucks, wheels, bearings, img } = this.props;
-    const { skateboards } = this.state;
+    const { construction, trucks, wheels, bearings, img, brand } = this.props;
+    
     return (
       <div>
         <form action="submit">
@@ -40,10 +40,14 @@ export default class Skateboards extends Component {
           <img src={img} alt="skateboards" />
         </div>
         <p>
+          <b> Brand:</b>
+          {brand} <br />
+          <b>Construction:</b>
           {construction} <br />
-          {trucks} <br />
+          <b> Trucks:</b> {trucks} <br />
+          <b> Wheels:</b>
           {wheels} <br />
-          {bearings} <br />
+          <b>Bearings:</b> {bearings} <br />
           <button onClick={() => this.props.delBoard(this.props.id)}>
             {" "}
             Delete{" "}
