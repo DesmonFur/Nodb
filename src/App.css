@@ -1,33 +1,33 @@
 .App {
-    text-align: center;
+  text-align: center;
 }
 
-.header{
-    border: 1px solid red;
-    height: 10vh;
-    width: 100%;
-    display: flex;
+.header {
+  border: 1px solid red;
+  height: 10vh;
+  width: 100%;
+  display: flex;
 }
-  
-  .collections{
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-    border:1px solid violet;
-    position: relative;
-    top: 10vh;
-  }
 
-  /* .contained {
+.collections {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: 1px solid violet;
+  position: relative;
+  top: 10vh;
+  flex-wrap: wrap;
+}
+
+/* .contained {
       display: flex;
       border: 1px solid yellow;
       justify-content: center;
   } */
 img {
-    position: relative;
-    width:9%;
-    height: auto;
-
+  position: relative;
+  width: 9%;
+  height: auto;
 }
 
 .skates > img {
