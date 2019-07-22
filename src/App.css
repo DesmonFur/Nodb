@@ -21,7 +21,7 @@
 .names {
  
 font-family: 'Londrina Solid', cursive;
- font-size: 23px;
+ font-size: 30px;;
 
 }
 
@@ -151,7 +151,7 @@ input[type=submit]:hover {
   justify-content: center;
   /* border: 1px solid violet; */
   position: relative;
-  top: 8vh;
+  top: 10vh;
   flex-wrap: wrap;
 }
 

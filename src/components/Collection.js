@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import Skateboards from "./Skateboards";
 import Form from "./Form";
+import LightSpeed from 'react-reveal/LightSpeed';
+import Slide from 'react-reveal/Slide';
 
 export default class Collection extends Component {
   constructor() {
@@ -68,14 +70,15 @@ export default class Collection extends Component {
     return (
       <div>
 
-        <div className='query'>
-          <input
-            type="text"
-            onChange={e => this.setState({ brand: e.target.value })}
-            placeholder='Find by Brand'
-          />
-          <input type='submit' onClick={this.search}  />
-        </div>
+        <LightSpeed>
+          <div className='query'>
+        <input
+        type="text"
+        onChange={e => this.setState({ brand: e.target.value })}
+        placeholder='Find by Brand'
+        />
+        <input type='submit' onClick={this.search}  />
+        </div></LightSpeed>
 
         <div className="collections">
           {skateArr.map(skates => (
@@ -96,7 +99,9 @@ export default class Collection extends Component {
             />
           ))}
         </div>
+              <Slide><div>
               <Form addBoard={this.addBoard} skateArr={this.state.skateArr} />
+              </div></Slide>
       </div>
     );
   }

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import LightSpeed from 'react-reveal/Slide';
 
 export class Form extends Component {
   constructor() {
@@ -26,6 +27,7 @@ export class Form extends Component {
     return (
       <div className="contain-form">
       <div className= 'form'>
+          <LightSpeed>
       {/* <form action="submit"> */}
       <input
       type="text"
@@ -72,6 +74,7 @@ export class Form extends Component {
       <input type="submit" value="Submit" onClick={() => this.props.addBoard(this.state)}></input>
       {/* <button onClick={() => this.props.addBoard(this.state)}>Add </button> */}
       {/* </form> */}
+      </LightSpeed>
       </div>
       </div>
     );
