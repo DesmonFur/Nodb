@@ -8,7 +8,7 @@ export default class Collection extends Component {
     super();
     this.state = {
       skateArr: [],
-      name: ""
+      brand: ""
     };
     this.edit = this.edit.bind(this);
     this.addBoard = this.addBoard.bind(this);
@@ -49,13 +49,13 @@ export default class Collection extends Component {
 
   find(value) {
     let filtered = this.state.skateArr.filter(
-      word => word === this.state.skateArr.name
+      word => word === this.state.skateArr.brand
     );
-    this.setState({ name: filtered });
+    this.setState({ brand: filtered });
   }
-  search(name) {
-    console.log(this.state.name);
-    axios.get(`/api/skateboardsName?name=${this.state.name}`).then(res => {
+  search(brand) {
+    console.log(this.state.brand);
+    axios.get(`/api/skateboardBrands?brand=${this.state.brand}`).then(res => {
       // console.log(res.data)
       this.setState({ skateArr: res.data });
     })
@@ -71,8 +71,8 @@ export default class Collection extends Component {
         <div className='query'>
           <input
             type="text"
-            onChange={e => this.setState({ name: e.target.value })}
-            placeholder='Find by Name'
+            onChange={e => this.setState({ brand: e.target.value })}
+            placeholder='Find by Brand'
           />
           <input type='submit' onClick={this.search}  />
         </div>
@@ -80,6 +80,7 @@ export default class Collection extends Component {
         <div className="collections">
           {skateArr.map(skates => (
             <Skateboards
+              key={skates.id}
               id={skates.id}
               construction={skates.construction}
               trucks={skates.trucks}
