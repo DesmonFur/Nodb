@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import Skateboards from "./Skateboards";
 import Form from "./Form";
-import LightSpeed from 'react-reveal/LightSpeed';
-import Slide from 'react-reveal/Slide';
+import LightSpeed from "react-reveal/LightSpeed";
+import Slide from "react-reveal/Slide";
 
 export default class Collection extends Component {
   constructor() {
@@ -25,9 +25,12 @@ export default class Collection extends Component {
   }
 
   addBoard(body) {
-    axios.post("/api/skateboards", body).then(res => {
-      this.setState({ skateArr: res.data });
-    }).catch(() => 'No can add');
+    axios
+      .post("/api/skateboards", body)
+      .then(res => {
+        this.setState({ skateArr: res.data });
+      })
+      .catch(() => "No can add");
   }
 
   delBoard(id) {
@@ -41,12 +44,14 @@ export default class Collection extends Component {
   }
 
   edit(id, body) {
-    axios.put(`/api/skateboards/${id}`, body).then(res => {
-      this.setState({
-        skateArr: res.data
-      });
-    }).catch(() => alert('NO EDIT'))
-    ;
+    axios
+      .put(`/api/skateboards/${id}`, body)
+      .then(res => {
+        this.setState({
+          skateArr: res.data
+        });
+      })
+      .catch(() => alert("NO EDIT"));
   }
 
   find(value) {
@@ -60,8 +65,7 @@ export default class Collection extends Component {
     axios.get(`/api/skateboardBrands?brand=${this.state.brand}`).then(res => {
       // console.log(res.data)
       this.setState({ skateArr: res.data });
-    })
-    ;
+    });
   }
 
   render() {
@@ -69,16 +73,16 @@ export default class Collection extends Component {
     console.log(skateArr);
     return (
       <div>
-
         <LightSpeed>
-          <div className='query'>
-        <input
-        type="text"
-        onChange={e => this.setState({ brand: e.target.value })}
-        placeholder='Find by Brand'
-        />
-        <input type='submit' onClick={this.search}  />
-        </div></LightSpeed>
+          <div className="query">
+            <input
+              type="text"
+              onChange={e => this.setState({ brand: e.target.value })}
+              placeholder="Find by Brand"
+            />
+            <input type="submit" onClick={this.search} />
+          </div>
+        </LightSpeed>
 
         <div className="collections">
           {skateArr.map(skates => (
@@ -99,9 +103,12 @@ export default class Collection extends Component {
             />
           ))}
         </div>
-              <Slide><div>
-              <Form addBoard={this.addBoard} skateArr={this.state.skateArr} />
-              </div></Slide>
+        <Slide>
+          <div>
+         
+            <Form addBoard={this.addBoard} skateArr={this.state.skateArr} />
+          </div>
+        </Slide>
       </div>
     );
   }

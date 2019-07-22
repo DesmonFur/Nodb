@@ -29,6 +29,7 @@ export class Form extends Component {
       <div className= 'form'>
           <LightSpeed>
       {/* <form action="submit"> */}
+      <h3> Add to Collection</h3>
       <input
       type="text"
       placeholder="name"

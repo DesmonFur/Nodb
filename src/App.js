@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Collection from "./components/Collection";
-class App extends Component {
+import Footer from "./components/Footer";
 
+class App extends Component {
   render() {
     return (
       <div>
@@ -12,6 +13,9 @@ class App extends Component {
         </div>
         <div className="App">
           <Collection />
+        </div>
+        <div>
+          <Footer />
         </div>
       </div>
     );
