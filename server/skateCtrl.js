@@ -51,13 +51,12 @@ module.exports = {
 
   getByName(req, res) {
     const { name } = req.query;
-
-    
     const index = data.findIndex(boards => boards.name.toLowerCase() == name.toLowerCase());
-
-
     console.log(index)
-    // res.status(200).send(data[index] ? [data[index]] : []);
     res.status(200).send(data[index] ? [data[index]] : []);
+
+    // const { name } = req.query
+    // const filtered = data.filter(el => el.name.toLowerCase() === name.toLowerCase() )
+    // res.status(200).send(filtered)
   }
 };

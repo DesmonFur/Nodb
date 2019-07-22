@@ -41,14 +41,14 @@ export default class Skateboards extends Component {
           <img src={img} alt="skateboards" />
         </div>
         <p>
-          <b> Brand:</b>
+          <b> Brand: </b>
           {brand} <br />
-          <b>Construction:</b>
+          <b>Construction: </b>
           {construction} <br />
-          <b> Trucks:</b> {trucks} <br />
-          <b> Wheels:</b>
+          <b> Trucks: </b> {trucks} <br />
+          <b> Wheels: </b>
           {wheels} <br />
-          <b>Bearings:</b> {bearings} <br />
+          <b>Bearings: </b> {bearings} <br />
             <span className="delete" onClick={() => this.props.delBoard(this.props.id)}>
               {" "}
               Delete{" "}
