@@ -266,3 +266,9 @@ input[type="submit"] {
   font-family: "Quicksand", sans-serif;
   color: black;
 }
+
+.quote {
+  font-family: "Quicksand", sans-serif;
+  font-size: 25px;
+
+}
