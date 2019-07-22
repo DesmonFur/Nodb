@@ -57,6 +57,7 @@ module.exports = {
 
 
     console.log(index)
+    // res.status(200).send(data[index] ? [data[index]] : []);
     res.status(200).send(data[index] ? [data[index]] : []);
   }
 };

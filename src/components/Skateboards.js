@@ -23,7 +23,7 @@ export default class Skateboards extends Component {
 
   render() {
     const { construction, trucks, wheels, bearings, img, brand } = this.props;
-    
+
     return (
       <div>
         <form action="submit">
@@ -32,8 +32,9 @@ export default class Skateboards extends Component {
             onChange={e => this.handleChange(e.target.value)}
             placeholder="name"
             value={this.state.input}
+            className='update-field'
           />
-          <button onClick={this.save}> Update</button>
+          <span className='update' onClick={this.save}> Update</span>
         </form>
         <h3>{this.props.name}</h3>
         <div className="skates">
@@ -48,10 +49,10 @@ export default class Skateboards extends Component {
           <b> Wheels:</b>
           {wheels} <br />
           <b>Bearings:</b> {bearings} <br />
-          <button onClick={() => this.props.delBoard(this.props.id)}>
-            {" "}
-            Delete{" "}
-          </button>
+            <span className="delete" onClick={() => this.props.delBoard(this.props.id)}>
+              {" "}
+              Delete{" "}
+            </span>
         </p>
       </div>
     );

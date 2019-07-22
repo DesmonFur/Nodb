@@ -72,6 +72,7 @@ export default class Collection extends Component {
           <input
             type="text"
             onChange={e => this.setState({ name: e.target.value })}
+            placeholder='Find by Name'
           />
           <input type='submit' onClick={this.search}  />
         </div>
