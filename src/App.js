@@ -9,13 +9,19 @@ class App extends Component {
     return (
       <div>
         <div>
-          <Header />
+          <header>
+            <Header />
+          </header>
         </div>
         <div className="App">
-          <Collection />
+          <main>
+            <Collection />
+          </main>
         </div>
         <div>
-          <Footer />
+          <footer>
+            <Footer />
+          </footer>
         </div>
       </div>
     );
